@@ -10,6 +10,7 @@ namespace DateCalculator;
 use \DateTime;
 use \DateInterval;
 use \DatePeriod;
+use \Exception;
 
 class DateCalculator {
 
@@ -34,16 +35,32 @@ class DateCalculator {
 	 * @throws Exception
 	 */
 	public function getNumberOfWeekDaysBetween(DateTime $date_1, DateTime $date_2){
+
 		$interval = new DateInterval('P1D');
-		$period = new DatePeriod($date_1, $interval, $date_2);
-		//TODO: order this correctly
+		$period = new DatePeriod($date_2, $interval, $date_1);
+		//TODO: ^^^ order this correctly
+
 		$business_day_count = 0;
 		foreach($period as $day){
-			if($this->isWeekendDay($day)){
+			if(!$this->isWeekendDay($day)){
 				$business_day_count ++;
 			}
 		}
 		return $business_day_count;
+	}
+
+	/**
+	 * is the date a weekend?
+	 * @param DateTime $date
+	 *
+	 * @return bool
+	 */
+	public function isWeekendDay(DateTime $date){
+		$weekday = $date->format('w');
+		if($weekday == 6 || $weekday == 7){
+			return true;
+		}
+		return false;
 	}
 
 	/**
