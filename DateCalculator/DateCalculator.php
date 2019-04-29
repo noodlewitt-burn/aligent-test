@@ -22,7 +22,7 @@ class DateCalculator {
 	 */
 	public function getNumberOfDaysBetween(DateTime $date_1, DateTime $date_2){
 		$diff = $date_1->diff($date_2);
-		return $diff->d;
+		return $diff->format("%a");
 	}
 
 	/**
