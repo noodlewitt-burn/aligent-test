@@ -10,7 +10,9 @@ $datecalc = new DateCalculator\DateCalculator($date_1, $date_2);
 
 echo("\nSeconds between:".$datecalc->getBetween(new \DateCalculator\DatePeriods\Seconds()));
 echo("\nDays between:".$datecalc->getBetween(new \DateCalculator\DatePeriods\Days()));
+echo("\nWeek Days between:".$datecalc->getBetween(new \DateCalculator\DatePeriods\WeekDays()));
+
 echo("\nHours between:".$datecalc->getBetween(new \DateCalculator\DatePeriods\Hours()));
 echo("\nMinutes between:".$datecalc->getBetween(new \DateCalculator\DatePeriods\Minutes()));
 echo("\nWeeks between:".$datecalc->getBetween(new \DateCalculator\DatePeriods\Weeks()));
-echo("\nWeek Days between:".$datecalc->getBetween(new \DateCalculator\DatePeriods\WeekDays()));
+
