@@ -1,0 +1,22 @@
+{
+    "name": "noodlewitt/aligent-test",
+    "description": "aligent test project",
+    "type": "project",
+    "require": {
+
+    },
+    "autoload": {
+        "psr-4": {
+            "DateCalculator\\": "DateCalculator/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.1"
+    },
+    "authors": [
+        {
+            "name": "Si Davies",
+            "email": "noodlewitt@gmail.com"
+        }
+    ]
+}
