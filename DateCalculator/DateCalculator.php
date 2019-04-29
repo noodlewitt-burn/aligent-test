@@ -8,6 +8,8 @@
 namespace DateCalculator;
 
 use \DateTime;
+use \DateInterval;
+use \DatePeriod;
 
 class DateCalculator {
 
@@ -21,6 +23,27 @@ class DateCalculator {
 	public function getNumberOfDaysBetween(DateTime $date_1, DateTime $date_2){
 		$diff = $date_1->diff($date_2);
 		return $diff->d;
+	}
+
+	/**
+	 * count the number of business days between 2 dates
+	 * @param DateTime $date_1
+	 * @param DateTime $date_2
+	 *
+	 * @return int
+	 * @throws Exception
+	 */
+	public function getNumberOfWeekDaysBetween(DateTime $date_1, DateTime $date_2){
+		$interval = new DateInterval('P1D');
+		$period = new DatePeriod($date_1, $interval, $date_2);
+		//TODO: order this correctly
+		$business_day_count = 0;
+		foreach($period as $day){
+			if($this->isWeekendDay($day)){
+				$business_day_count ++;
+			}
+		}
+		return $business_day_count;
 	}
 
 }
