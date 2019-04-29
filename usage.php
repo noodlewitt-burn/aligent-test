@@ -9,3 +9,5 @@ $date_2 = new DateTime('11/11/2016 14:48:21', $date_1_timezone);
 echo("\nDays between:".$datecalc->getNumberOfDaysBetween($date_1, $date_2));
 
 echo("\nWeekdays between:".$datecalc->getNumberOfWeekDaysBetween($date_1, $date_2));
+
+echo("\nWhole weeks between:".$datecalc->getNumberOfWeeksBetween($date_1, $date_2));

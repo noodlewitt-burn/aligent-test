@@ -46,4 +46,16 @@ class DateCalculator {
 		return $business_day_count;
 	}
 
+	/**
+	 * get number of weeks between 2 dates
+	 * @param DateTime $date_1
+	 * @param DateTime $date_2
+	 *
+	 * @return float|int
+	 */
+	public function getNumberOfWeeksBetween(DateTime $date_1, DateTime $date_2){
+		$days = $this->getNumberOfDaysBetween($date_1, $date_2);
+		return floor($days/7);
+	}
+
 }
