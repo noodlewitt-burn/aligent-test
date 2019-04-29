@@ -10,16 +10,13 @@ namespace DateCalculator;
 use Carbon\Carbon;
 use \DateTime;
 use \DateCalculator\DatePeriods\TimeUnit as TimeUnit;
-use \DateInterval;
-use \DatePeriod;
-use \Exception;
 
 class DateCalculator {
 
 	private $date_1;
 	private $date_2;
 
-	public function __construct($date_1, $date_2) {
+	public function __construct(DateTime $date_1, DateTime $date_2) {
 		$this->date_1 = Carbon::instance($date_1);
 		$this->date_2 = Carbon::instance($date_2);
 	}
