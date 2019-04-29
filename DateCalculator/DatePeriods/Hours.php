@@ -6,13 +6,13 @@
  * File: Weeks.php
  */
 namespace DateCalculator\DatePeriods;
+use Carbon\Carbon;
+
 class Hours implements TimeUnit {
 
-	public function calculateInterval($diff){
-echo('<pre>');
-var_dump($diff->s);
-exit();
-		return $diff->format("%h");
+	public function calculateInterval(Carbon $date_1, Carbon $date_2){
+
+		return $date_1->diffInHours($date_2);
 		//return $days*24;
 	}
 }

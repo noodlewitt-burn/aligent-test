@@ -6,9 +6,11 @@
  * File: Weeks.php
  */
 namespace DateCalculator\DatePeriods;
+use Carbon\Carbon;
+
 class Years implements TimeUnit {
 
-	public function calculateInterval($days){
-		return $days/365;
+	public function calculateInterval(Carbon $date_1, Carbon $date_2){
+		return $date_1->diffInYears($date_2);
 	}
 }

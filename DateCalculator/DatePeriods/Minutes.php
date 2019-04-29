@@ -6,9 +6,11 @@
  * File: Weeks.php
  */
 namespace DateCalculator\DatePeriods;
+use Carbon\Carbon;
+
 class Minutes implements TimeUnit {
 
-	public function calculateInterval($days){
-		return $days*24*60;
+	public function calculateInterval(Carbon $date_1, Carbon $date_2){
+		return $date_1->diffInMinutes($date_2);
 	}
 }
